@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body > div {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    
+}
+
+@keyframes slideInLeft {  
+    from {   
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);       
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.3);
+    padding: 30px 0;
+    justify-content: space-between;
+    width: 450px;
+}
+
+.toast + .toast {
+    margin-top: 20px;
+}
+
+.toast--success {
+    border-left: 4px solid #47d764;
+}
+
+.toast--success .toast__icon {
+    color: #47d764
+}
+
+.toast--warning {
+    border-left: 4px solid #2f86eb;
+}
+
+.toast--warning .toast__icon {
+    color: #2f86eb;
+}
+
+.toast--error {
+    border-left: 4px solid rgb(232 8 8);
+}
+
+.toast--error .toast__icon {
+    color: rgb(232 8 8);
+}
+
+
+.toast__icon {
+    margin: 0 16px;
+    font-size: 24px;
+}
+
+.toast__body {
+    flex: 1;
+}
+
+.toast__body__titel {
+    font-size: 16px;
+    color: #333;
+}
+
+.toast__body__msg {
+    margin-top: 5px;
+    color: #bbb4b4;
+}
+
+.toast__close {
+    margin: 0 16px;
+    font-size: 20px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.toast__close:hover {
+    opacity: 0.3;
+}
+
+
+/* button */
+body {
+    height: 50vh;
+    display: flex;
+}
+
+body > button {
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 48px;
+    border-radius: 20px;
+    transition: opacity .2s ease;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    z-index: 1;
+}
+
+.btn:hover {
+    opacity: .8;
+}
+
+.btn--success {
+    background-color: #71be34;
+}
+
+.btn--warn {
+    background-color: #ffb702;
+}
+
+.btn--error {
+    background-color: #ff623d;
+}
+
+.btn--disabled {
+    opacity: 0.5 !important;
+    cursor: default;
+}
